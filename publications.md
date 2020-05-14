@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: default
 title: Publications
-permalink: /publications/
+
 ---
 
 If you are looking for a paper to cite, this is the one you want:

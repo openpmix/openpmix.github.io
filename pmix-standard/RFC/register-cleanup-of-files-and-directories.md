@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Register Cleanup of Files and Directories
 ---
 

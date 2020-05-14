@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: What APIs and Attributes are Supported on my RM?
 ---
 

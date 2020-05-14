@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: default
 title: Privacy Policy
-permalink: /privacy-policy
+
 ---
 
 Who we are

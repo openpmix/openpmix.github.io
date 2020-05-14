@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Running Applications with the PMIx Reference RunTime Environment (PRRTE)
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Coordination Across Programming Models (OpenMP/MPI)
 ---
 

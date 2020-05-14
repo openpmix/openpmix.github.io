@@ -23,22 +23,24 @@ title: OpenPMIx
 description: >- # this means to ignore newlines until "baseurl:"
   Reference Implmentation of the
   Process Management Interface Exascale (PMIx) standard
-  Copyright 2017-2020 OpenPMIx Community
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  openpmix
 #twitter_username: jekyllrb
 
+theme: jekyll-theme-modernist
+
 # Build settings
-theme: minima
-minima:
-    skin: dark
-    #skin: classic
-    #skin: solarized
-    #skin: solarized-dark
+#theme: minima
+#minima:
+#    skin: dark
+#    #skin: classic
+#    #skin: solarized
+#    #skin: solarized-dark
 
 plugins:
-  - jekyll-feed
+    - jekyll-feed
+
 
 header_pages:
   - downloads.md

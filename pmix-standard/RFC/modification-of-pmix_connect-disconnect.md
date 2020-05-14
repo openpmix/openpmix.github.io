@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Modification of PMIX_Connect/Disconnect
 ---
 

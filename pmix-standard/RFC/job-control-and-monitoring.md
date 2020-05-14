@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Job Control and Monitoring
 ---
 

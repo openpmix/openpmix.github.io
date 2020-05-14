@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Example: Direct-Launch Debugger Tool
 ---
 

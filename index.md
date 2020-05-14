@@ -1,8 +1,6 @@
 ---
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
 ---
 
 <!-- ![OpenPMIx Logo](/images/openpmix-logo.png "OpenPMIx Logo") -->
@@ -22,6 +20,7 @@ layout: home
  - FAQ
  - "How-to" Guides
 
-[PMIx Standard](https://pmix.github.io)
+[Standard](https://pmix.github.io)
 ===============
- - Standard specification project
+ - PMIx Standard specification project
+
