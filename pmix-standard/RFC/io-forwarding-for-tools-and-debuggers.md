@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: IO Forwarding for Tools and Debuggers
 ---
 

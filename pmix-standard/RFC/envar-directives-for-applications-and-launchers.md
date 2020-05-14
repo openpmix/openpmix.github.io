@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Envar Directives for Applications and Launchers
 ---
 

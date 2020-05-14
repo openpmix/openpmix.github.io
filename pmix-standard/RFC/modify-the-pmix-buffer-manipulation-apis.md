@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Modify the PMIx Buffer Manipulation APIs
 ---
 

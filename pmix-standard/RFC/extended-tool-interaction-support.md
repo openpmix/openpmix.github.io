@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Extended Tool Interaction Support
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Input/Output Forwarding For Tools
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Modify Behavior of PMIX_Get
 ---
 

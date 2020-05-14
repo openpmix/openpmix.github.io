@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: What Are RMs Required to Provide?
 ---
 

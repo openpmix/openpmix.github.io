@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Support for Launching Applications Under Debugger Tools
 ---
 

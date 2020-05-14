@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: default
 title: Contribute
-permalink: /contribute/
+
 ---
 
 PMIx Reference Implementation Library (PRIL)
