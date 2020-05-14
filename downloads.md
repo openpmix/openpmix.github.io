@@ -2,4 +2,12 @@
 layout: page
 title: Downloads
 ---
-[https://github.com/pmix/pmix/releases](https://github.com/pmix/pmix/releases)
+
+OpenPMIx Library
+----------------
+ - [https://github.com/openpmix/openpmix/releases](https://github.com/openpmix/openpmix/releases)
+
+PMIx Reference RunTime Environment
+----------------------------------
+ - [https://github.com/openpmix/prrte/releases](https://github.com/openpmix/prrte/releases)
+

@@ -5,7 +5,7 @@
 layout: home
 ---
 
-![PMIx Logo](/images/pmix-logo.png "PMIx Logo")
+<!-- ![OpenPMIx Logo](/images/openpmix-logo.png "OpenPMIx Logo") -->
 
 ![PMIx Launch Sequence](/images/LaunchSeqSmall.png "PMIx Launch Sequence")
 
@@ -16,15 +16,12 @@ layout: home
  - PMIx Reference RunTime Environment
  - Developer's Telecon
 
-[PMIx Standard](/pmix-standard)
-===============
- - PMIx Standard (document)
- - PMIx RFCs
- - Publications/Presentation
-
 [Support](/support)
 =========
  - Support issues
  - FAQ
  - "How-to" Guides
 
+[PMIx Standard](https://pmix.github.io)
+===============
+ - Standard specification project
