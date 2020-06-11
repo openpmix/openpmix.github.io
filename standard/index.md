@@ -1,6 +1,7 @@
 ---
 layout: default
 title: PMIx Standard
+permalink: /standard
 ---
 
 ![PMIx Logo Roles](/images/pmix-logo-roles.png 'PMIx Logo Roles')
@@ -310,43 +311,43 @@ Roles and Responsibilities
 Provides guidance on the expectations PMIx places on various cluster
 subsystems, including required as well as desired levels of support.
 
--   [Fabric Manager](/pmix-standard/fabric-manager-roles-and-expectations)
--   [Input/Output Forwarding for Tools](/pmix-standard/input-output-forwarding-for-tools)
--   [Tiered Storage Support](/pmix-standard/tiered-storage-support)
--   [Logging with PMIx](/pmix-standard/logging-with-pmix)
--   [PMIx Groups](/pmix-standard/pmix-groups)
+-   [Fabric Manager](/standard/fabric-manager-roles-and-expectations)
+-   [Input/Output Forwarding for Tools](/standard/input-output-forwarding-for-tools)
+-   [Tiered Storage Support](/standard/tiered-storage-support)
+-   [Logging with PMIx](/standard/logging-with-pmix)
+-   [PMIx Groups](/standard/pmix-groups)
 
 PMIx RFCs
 ---------
 
 -   v2 RFCs
-    -   [Basic Tool Interaction Mechanism](/pmix-standard/RFC/basic-tool-interaction-mechanism)
-    -   [Event Notification](/pmix-standard/RFC/event-notification)
-    -   [Modification of PMIx\_Connect/Disconnect](/pmix-standard/RFC/modification-of-pmix_connect-disconnect)
-    -   [Flexible Allocation Support](/pmix-standard/RFC/flexible-allocation-support)
-    -   [Modify Behavior of PMIx\_Get](/pmix-standard/RFC/modify-behavior-of-pmix_get)
-    -   [Extended Tool Interaction Support](/pmix-standard/RFC/extended-tool-interaction-support)
-    -   [Refactor Security Support](/pmix-standard/RFC/refactor-security-support)
-    -   [Support for Network Interactions](/pmix-standard/RFC/support-for-network-interactions)
-    -   [Query Time Remaining in Allocation](/pmix-standard/RFC/query-time-remaining-in-allocation)
-    -   [Job Control and Monitoring](/pmix-standard/RFC/job-control-and-monitoring)
-    -   [Extend Event Notification](/pmix-standard/RFC/extend-event-notification)
-    -   [Expose PMIx Buffer Manipulation Functions](/pmix-standard/RFC/expose-pmix-buffer-manipulation-functions)
-    -   [Acquisition of Subsystem Launch Information](/pmix-standard/RFC/acquisition-of-subsystem-launch-information)
+    -   [Basic Tool Interaction Mechanism](/standard/RFC/basic-tool-interaction-mechanism)
+    -   [Event Notification](/standard/RFC/event-notification)
+    -   [Modification of PMIx\_Connect/Disconnect](/standard/RFC/modification-of-pmix_connect-disconnect)
+    -   [Flexible Allocation Support](/standard/RFC/flexible-allocation-support)
+    -   [Modify Behavior of PMIx\_Get](/standard/RFC/modify-behavior-of-pmix_get)
+    -   [Extended Tool Interaction Support](/standard/RFC/extended-tool-interaction-support)
+    -   [Refactor Security Support](/standard/RFC/refactor-security-support)
+    -   [Support for Network Interactions](/standard/RFC/support-for-network-interactions)
+    -   [Query Time Remaining in Allocation](/standard/RFC/query-time-remaining-in-allocation)
+    -   [Job Control and Monitoring](/standard/RFC/job-control-and-monitoring)
+    -   [Extend Event Notification](/standard/RFC/extend-event-notification)
+    -   [Expose PMIx Buffer Manipulation Functions](/standard/RFC/expose-pmix-buffer-manipulation-functions)
+    -   [Acquisition of Subsystem Launch Information](/standard/RFC/acquisition-of-subsystem-launch-information)
 -   v3 RFCs
-    -   [Security Credential Transactions](/pmix-standard/RFC/security-credential-transactions)
-    -   [Register Cleanup of Files and Directories](/pmix-standard/RFC/register-cleanup-of-files-and-directories)
-    -   [IO Forwarding for Tools and Debuggers (provisionally accepted)](/pmix-standard/RFC/io-forwarding-for-tools-and-debuggers)
-    -   [Environmental Parameter Directives for Applications and Launchers](/pmix-standard/RFC/envar-directives-for-applications-and-launchers)
-    -   [Coordination Across Programming Models (OpenMP/MPI)](/pmix-standard/RFC/coordination-across-programming-models-openmp-mpi)
-    -   [Modify the PMIx buffer manipulation APIs](/pmix-standard/RFC/modify-the-pmix-buffer-manipulation-apis)
-    -   [Extended Debugger Support (in progress)](/pmix-standard/RFC/extended-debugger-support)
-    -   [DataStore Abstraction Framework (in progress)](/pmix-standard/RFC/datastore-abstraction-framework)
-    -   [Extension of PMIx Logging Support](/pmix-standard/RFC/extension-of-pmix-logging-support)
+    -   [Security Credential Transactions](/standard/RFC/security-credential-transactions)
+    -   [Register Cleanup of Files and Directories](/standard/RFC/register-cleanup-of-files-and-directories)
+    -   [IO Forwarding for Tools and Debuggers (provisionally accepted)](/standard/RFC/io-forwarding-for-tools-and-debuggers)
+    -   [Environmental Parameter Directives for Applications and Launchers](/standard/RFC/envar-directives-for-applications-and-launchers)
+    -   [Coordination Across Programming Models (OpenMP/MPI)](/standard/RFC/coordination-across-programming-models-openmp-mpi)
+    -   [Modify the PMIx buffer manipulation APIs](/standard/RFC/modify-the-pmix-buffer-manipulation-apis)
+    -   [Extended Debugger Support (in progress)](/standard/RFC/extended-debugger-support)
+    -   [DataStore Abstraction Framework (in progress)](/standard/RFC/datastore-abstraction-framework)
+    -   [Extension of PMIx Logging Support](/standard/RFC/extension-of-pmix-logging-support)
 -   v4 RFCs
-    -   [PMIx Support for Storage Systems (in progress)](/pmix-standard/RFC/pmix-support-for-storage-systems)
-    -   [Support for Launching Applications under Debugger Tools (in progress)](/pmix-standard/RFC/support-for-launching-applications-under-debugger-tools)
-    -   [PMIx Groups (in progress)](/pmix-standard/RFC/pmix-groups-2)
+    -   [PMIx Support for Storage Systems (in progress)](/standard/RFC/pmix-support-for-storage-systems)
+    -   [Support for Launching Applications under Debugger Tools (in progress)](/standard/RFC/support-for-launching-applications-under-debugger-tools)
+    -   [PMIx Groups (in progress)](/standard/RFC/pmix-groups-2)
 
 PMIx Presentations
 ------------------
