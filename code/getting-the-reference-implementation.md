@@ -9,7 +9,7 @@ Getting the Code
 ================
 
 The PMIx Reference Implementation Git repository (where most active
-development is done) is hosted at [GitHub](https://github.com/pmix/pmix).
+development is done) is hosted at [GitHub](https://github.com/openpmix/openpmix).
 Because the PMIx Team tries very hard to release stable and
 as-bug-free-as-possible distributions, we tend to take a long time between
 major releases. However, there are many useful new features (and bug fixes)
@@ -24,7 +24,7 @@ guaranteed to be stable. We try very hard to not commit things that are
 broken, but this is an active development tree — bugs happen. This is
 actually another major reason that this tree has been made available: peer
 review. If you find any bugs, please report them on the
-[issues](https://github.com/pmix/pmix/issues) list. You are welcome to
+[issues](https://github.com/openpmix/openpmix/issues) list. You are welcome to
 either clone the PMIx repository, or download one of the release tarballs or
 source RPM.
 
@@ -35,15 +35,21 @@ path, you will likely need to download and install [Git](http://git-scm.org/).
 
 In addition to the code itself, the repository contains a series of Git tags
 indicating where releases were made (see
-[Releases](https://github.com/pmix/pmix/releases)) that contain the release
-tarballs and source RPM.
+[Releases](https://github.com/openpmix/openpmix/releases)) that contain the release
+tarballs and source RPM. However, GitHub orders those tags according to the date
+when they were created, **not** according to their release series. Thus, the
+"latest release" marker is placed on the tag that was most recently created and
+not on the actual current software release.
+
+Accordingly, we **strongly** recommend that you obtain the tarball or source rpm
+from the website's [Download][https://openpmix.github.io/code/downloads] location.
 
 Github provides a simple button for obtaining the clone command. Clone
 either the master any of the release branches. For example (as of Nov 2015),
 to clone the main development repository via HTTPS:
 
 ```shell
-    shell$ git clone https://github.com/pmix/pmix
+    shell$ git clone https://github.com/openpmix/openpmix
     Cloning into ‘pmix’…
     remote: Counting objects: 5319, done.
     remote: Compressing objects: 100% (27/27), done.
