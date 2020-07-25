@@ -42,7 +42,7 @@ when they were created, **not** according to their release series. Thus, the
 not on the actual current software release.
 
 Accordingly, we **strongly** recommend that you obtain the tarball or source rpm
-from the website's [Download][https://openpmix.github.io/code/downloads] location.
+from the website's [Download](https://openpmix.github.io/downloads) location.
 
 Github provides a simple button for obtaining the clone command. Clone
 either the master any of the release branches. For example (as of Nov 2015),
