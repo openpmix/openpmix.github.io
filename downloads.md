@@ -40,7 +40,7 @@ Archived series:
 | v3.0.2 | Sep 18, 2018 | [pmix-3.0.2](https://github.com/openpmix/openpmix/releases/tag/v3.0.2) |
 | v3.0.1 | Aug 20, 2018 | [pmix-3.0.1](https://github.com/openpmix/openpmix/releases/tag/v3.0.1) |
 | v3.0.0 | Jul 6, 2018 | [pmix-3.0.0](https://github.com/openpmix/openpmix/releases/tag/v3.0.0) |
-| ------ | ------------ | ---------------------------------------------------------------------- |
+|        |             |                                                                        |
 | v2.1.4 | Sep 18, 2018 | [pmix-2.1.4](https://github.com/openpmix/openpmix/releases/tag/v2.1.4) |
 | v2.1.3 | Aug 20, 2018 | [pmix-2.1.3](https://github.com/openpmix/openpmix/releases/tag/v2.1.3) |
 | v2.1.2 | Jul 6, 2018  | [pmix-2.1.2](https://github.com/openpmix/openpmix/releases/tag/v2.1.2) |
