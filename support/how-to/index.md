@@ -25,5 +25,5 @@ The following guides are available:
 -   [Getting the code](/code/getting-the-pmix-reference-server)
 -   [Preparing Autotools](/code/building-autotools)
 -   [Building PRRTE](/code/building-the-pmix-reference-server)
--   [Running Applications with PRRTE](/support/how-to/running-apps-under-psrvr/index.html)
+-   [Running Applications with PRRTE](/support/how-to/running-apps-under-psrvr)
 
