@@ -9,7 +9,15 @@ Current stable series:
 
 | Release | Date  | Package |  Standard  |
 | ------- | ----- | ------- | ---------- |
-| v4.0.0 | Dec 2020 | [pmix-4.0.0](https://github.com/openpmix/openpmix/releases/tag/v4.0.0) | [v4.0](https://pmix.github.io/uploads/2020/12/pmix-standard-v4.0.pdf) |
+| v4.0.0 | Dec 29, 2020 | [pmix-4.0.0](https://github.com/openpmix/openpmix/releases/tag/v4.0.0) | [v4.0](https://pmix.github.io/uploads/2020/12/pmix-standard-v4.0.pdf) |
+| ------ | ------------ | ---------------------------------------------------------------------- | --------------------------------------------------------------------- |
+
+
+| Release | Date | Package |  Standard  |
+| ------- | ---- | ------- | ---------- |
+| v3.2.2 | Dec 7, 2020 | [pmix-3.2.2](https://github.com/openpmix/openpmix/releases/tag/v3.2.2) | [v3.1](https://pmix.github.io/uploads/2019/02/pmix-standard-3.1.pdf) |
+| v3.2.1 | Nov 12, 2020 | [pmix-3.2.1](https://github.com/openpmix/openpmix/releases/tag/v3.2.1) |                                                                      |
+| v3.2.0 | Oct 22, 2020 | [pmix-3.2.0](https://github.com/openpmix/openpmix/releases/tag/v3.2.0) |                                                                      |
 | ------ | ------------ | ---------------------------------------------------------------------- | --------------------------------------------------------------------- |
 
 
