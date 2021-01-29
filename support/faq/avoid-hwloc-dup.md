@@ -79,4 +79,4 @@ if (0 != hwloc_shmem_topology_adopt(&topo, fd, 0, (void*)addr, size, 0)) {
     /* can't connect */
 }
 ```
-At the completion of this procedure, you can traverse/query the topology tree in "topo" using the usual HWLOC support functions.
+At the completion of either procedure, you can traverse/query the topology tree in "topo" using the usual HWLOC support functions. Note that any attempt to modify the topology tree (including adding data to the "userdata" field of an HWLOC object) will fail, and that you should not "destruct" the topology when done with it (a call to `hwloc_topology_destroy` will return an error).
