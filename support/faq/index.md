@@ -12,4 +12,4 @@ title: FAQ
 -   [What compatibility does PMIx offer for PMI-1 and PMI-2?](/support/faq/backward-compatibility)
 -   [What APIs and attributes are supported on my RM?](/support/faq/what-apis-are-supported-on-my-rm)
 -   [How does PMIx work with containers?](/support/faq/how-does-pmix-work-with-containers)
-
+-   [How do I avoid duplicating the HWLOC topology tree?](/support/faq/avoid-hwloc-dup)
