@@ -40,14 +40,35 @@ client - i.e., by appropriate use of PMIx_Get.
 **Accessing the HWLOC topology tree from clients**
 
 Once the HWLOC topology information has been provided to the PMIx library (either from the host or via its own
-discovery), clients are provided with rendezvous options as follows:
+discovery), clients are provided with several rendezvous options.
 
-1. Starting with PMIx v4.1, they can directly obtain a pointer to the `hwloc_topology_t` by calling `PMIx_Get`
+Starting with PMIx v4.1, clients can directly obtain a pointer to the `hwloc_topology_t` by calling `PMIx_Get`
 with the `PMIX_TOPOLOGY2` key. This will return a `pmix_topology_t` structure that contains a `source` field 
 dentifying the generator of the topology (for now, only HWLOC is supported) plus a `topology` field that contains
-the `hwloc_topology_t` pointer.
+the `hwloc_topology_t` pointer:
 
-1. Starting with PMIx 3.0, they can obtain the rendezvous information for the HWLOC shared memory region
+```c
+pmix_value_t *val;
+pmix_proc_t wildcard;
+pmix_info_t info;
+pmix_topology_t *ptopo;
+hwloc_topology_t topo;
+
+PMIX_LOAD_PROCID(&wildcard, myproc.nspace, PMIX_RANK_WILDCARD);
+PMIX_INFO_LOAD(&info, PMIX_OPTIONAL, NULL, PMIX_BOOL);
+rc = PMIx_Get(&wildcard, PMIX_TOPOLOGY2, &info, 1, &val);
+if (PMIX_SUCCESS != rc) {
+    /* topology isn't available */
+}
+ptopo = val->data.topo;
+PMIX_VALUE_RELEASE(val);
+if (0 != strcasecmp(ptopo->source, "hwloc")) {
+    /* hwloc didn't create this */
+}
+topo = (hwloc_topology_t)ptopo->topology;
+```
+
+Starting with PMIx 3.0, clients can obtain the rendezvous information for the HWLOC shared memory region
 containing the topology using code such as this:
 
 ```c
@@ -92,9 +113,7 @@ if (0 != hwloc_shmem_topology_adopt(&topo, fd, 0, (void*)shmemaddress, shmemsize
 }
 ```
 
-This, of course, requires that the library or application build/link against a PMIx library.
-
-1. In some cases, particularly in lower-level libraries, adding a dependency on PMIx is something rather undesirable - developers of such libraries prefer to keep them "thin" with minimal dependencies and as small a memory footprint as possible. Beginning with PMIx v4.1, PMIx provides additional support for such cases by exposing the three HWLOC shmem "hooks" as environmental variables in addition to PMIx keys. Thus, an alternative to the previous code in such circumstances would look like the following:
+This, of course, requires that the library or application build/link against a PMIx library. In some cases, particularly in lower-level libraries, adding a dependency on PMIx is something rather undesirable - developers of such libraries prefer to keep them "thin" with minimal dependencies and as small a memory footprint as possible. Beginning with PMIx v4.1, PMIx provides additional support for such cases by exposing the three HWLOC shmem "hooks" as environmental variables in addition to PMIx keys. Thus, an alternative to the previous code in such circumstances would look like the following:
 
 ```c
 char *efile, *eaddr, *esize;
