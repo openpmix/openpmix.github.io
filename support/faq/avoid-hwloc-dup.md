@@ -18,11 +18,11 @@ On the plus side, PMIx and HWLOC have combined forces to help alleviate this pro
 Once the HWLOC topology information has been provided to the PMIx library (either from the host or via its own
 discovery), clients are provided with several rendezvous options.
 
-Starting with PMIx v4.1, clients can directly obtain a pointer to the `hwloc_topology_t` by calling `PMIx_Get`
-with the `PMIX_TOPOLOGY2` key. **This is the recommended way to obtain the HWLOC topology tree as it guarantees
+Starting with PMIx v4.1, clients can directly obtain a pointer to the `hwloc_topology_t` by calling `PMIx_Load_topology`. **This is the recommended way to obtain the HWLOC topology tree as it guarantees
 use of the most optimal method for obtaining it**. This will return a `pmix_topology_t` structure that contains a `source` field
 identifying the generator of the topology (for now, only HWLOC is supported) plus a `topology` field that contains
 the `hwloc_topology_t` pointer. The PMIx library is responsible for obtaining the topology tree in the most efficient manner, according to the following priorities:
+- if already created, then return the pointer to the tree held in the PMIx library
 - shared memory region created by an external source (e.g., the PMIx server)
 - XML string converted to local topology tree (avoids the discovery process)
 - direct discovery
@@ -30,28 +30,22 @@ the `hwloc_topology_t` pointer. The PMIx library is responsible for obtaining th
 An example of the code for this method is shown below:
 
 ```c
-pmix_value_t *val;
-pmix_proc_t wildcard;
-pmix_info_t info;
-pmix_topology_t *ptopo;
+pmix_topology_t ptopo;
 hwloc_topology_t topo;
 
-PMIX_LOAD_PROCID(&wildcard, myproc.nspace, PMIX_RANK_WILDCARD);
-PMIX_INFO_LOAD(&info, PMIX_OPTIONAL, NULL, PMIX_BOOL);
-rc = PMIx_Get(&wildcard, PMIX_TOPOLOGY2, &info, 1, &val);
+PMIX_TOPOLOGY_CONSTRUCT(&ptopo);
+rc = PMIx_Load_topology(&ptopo);
 if (PMIX_SUCCESS != rc) {
-    /* topology isn't available */
+    /* topology isn't available nor discoverable */
 }
-ptopo = val->data.topo;
-PMIX_VALUE_RELEASE(val);
-if (0 != strcasecmp(ptopo->source, "hwloc")) {
-    /* hwloc didn't create this */
-}
-topo = (hwloc_topology_t)ptopo->topology;
+printf("Topology source/version: %s\n", ptopo.source);
+topo = (hwloc_topology_t)ptopo.topology;
 ```
+Note that any attempt to modify the topology tree (including adding data to the "userdata" field of an HWLOC object) will fail, and that you should not "destruct" the topology when done with it as the PMIx library "owns" the associated memory (and will clean it up upon call
+to `PMIx_Finalize` (or the equivalent for servers and tools).
 
-Clients using PMIx 3.x can obtain the rendezvous information for the HWLOC shared memory region
-containing the topology using code such as this:
+Unfortunately, earlier versions of PMIx require more manual topology setup. Clients using PMIx 3.x can obtain the rendezvous
+information for the HWLOC shared memory region (if available) containing the topology using code such as this:
 
 ```c
 pmix_value_t *val;
@@ -94,38 +88,19 @@ if (0 != hwloc_shmem_topology_adopt(&topo, fd, 0, (void*)shmemaddress, shmemsize
     /* can't connect */
 }
 ```
+**CRITICAL NOTE:** each client process can only execute hwloc_shmem_topology_adopt ONCE. In other words, if the client process
+contains multiple libraries wishing to access HWLOC topology information, the client must ensure that only one of them adopts the
+shared memory region. A method for passing the resulting `hwloc_topology_t` pointer to the other libraries must be provided. One
+method is to use `PMIx_Store_internal` to store the pointer, and then let the other libraries use `PMIx_Get` to retrieve it. Note that any attempt to modify the topology tree (including adding data to the "userdata" field of an HWLOC object) will fail, and that you should not "destruct" the topology when done with it (a call to `hwloc_topology_destroy` will return an error).
 
-These methods, of course, require that the library or application build/link against a PMIx library. In some cases, particularly in lower-level libraries, adding a dependency on PMIx is something rather undesirable - developers of such libraries prefer to keep them "thin" with minimal dependencies and as small a memory footprint as possible. Beginning with PMIx v4.1, PMIx provides additional support for such cases by exposing the three HWLOC shmem "hooks" as environmental variables in addition to PMIx keys. Thus, an alternative to the previous code in such circumstances would look like the following:
+For cases where shared memory topology support is not present (e.g., when using HWLOC versions prior to v2.0) or not desirable, PMIx servers typically provide XML representations of the topology via the PMIX_HWLOC_XML_V1 or  PMIX_HWLOC_XML_V2 attributes, or the PMIX_LOCAL_TOPO attribute for older PMIx versions.
 
-```c
-char *efile, *eaddr, *esize;
-size_t addr, size;
-int fd;
-hwloc_topology_t topo;
+**CRITICAL NOTE:** At the completion of any of these procedures, you can traverse/query the topology tree in "topo" using the usual HWLOC support functions. However, this requires that the version of HWLOC you are using MUST exactly match the HWLOC version used to construct the topology. To aid in determining compatibility, PMIx adds the HWLOC version triplet to the end of the `pmix_topology_t` source field - e.g., "hwloc:2.2.0" - where the version is known. PMIx currently cannot determine the source HWLOC version, for instance, when given the topology tree from a file. We are working on that extension.
 
-efile = getenv("PMIX_HWLOC_SHMEM_FILE");
-eaddr = getenv("PMIX_HWLOC_SHMEM_ADDR");
-esize = getenv("PMIX_HWLOC_SHMEM_SIZE");
+The above methods, of course, require that the library or application build/link against a PMIx library. In some cases, particularly in lower-level libraries, adding a dependency on PMIx is something rather undesirable - developers of such libraries prefer to keep them "thin" with minimal dependencies and as small a memory footprint as possible. We are still working on a solution to this use-case. Meantime, we strongly
+encourage library developers to consider directly using PMIx to avoid topology tree duplication.
 
-if (NULL == efile || NULL == eaddr || NULL == esize) {
-    /* can't connect */
-}
 
-addr = strtoul(eaddr, NULL, 10);
-size = strtoul(esize, NULL, 10);
-
-if (0 > (fd = open(efile, O_RDONLY))) {
-    /* can't connect */
-}
-
-if (0 != hwloc_shmem_topology_adopt(&topo, fd, 0, (void*)addr, size, 0)) {
-    /* can't connect */
-}
-```
-
-At the completion of any of these procedures, you can traverse/query the topology tree in "topo" using the usual HWLOC support functions. Note that any attempt to modify the topology tree (including adding data to the "userdata" field of an HWLOC object) will fail, and that you should not "destruct" the topology when done with it (a call to `hwloc_topology_destroy` will return an error).
-
-For cases where shared memory topology support is not present (e.g., when using HWLOC versions prior to v2.0) or not desirable, PMIx servers provide XML representations of the topology via the PMIX_TOPOLOGY_XML attribute. Please check the PMIx Standard for details.
 
 **Providing HWLOC topology tree to the PMIx server**
 
