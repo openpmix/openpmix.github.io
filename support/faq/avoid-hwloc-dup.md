@@ -126,4 +126,4 @@ Note that PMIx itself requires access to HWLOC information in order to provide s
 the host does not provide a topology to the PMIx library, the library itself will most likely create one for its own
 use. Hosts that wish to access the PMIx version of the topology tree (e.g., if the host wants to take advantage
 of the PMIx shared memory support) can obtain the required rendezvous information in the same manner as a
-client - i.e., by appropriate use of PMIx_Get.
+client - i.e., by appropriate use of PMIx_Load_topology.
