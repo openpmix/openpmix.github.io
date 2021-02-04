@@ -124,6 +124,5 @@ acts as a simple relay for the information.
 
 Note that PMIx itself requires access to HWLOC information in order to provide several of its features. Thus, if
 the host does not provide a topology to the PMIx library, the library itself will most likely create one for its own
-use. Hosts that wish to access the PMIx version of the topology tree (e.g., if the host wants to take advantage
-of the PMIx shared memory support) can obtain the required rendezvous information in the same manner as a
-client - i.e., by appropriate use of PMIx_Load_topology.
+use. Hosts that wish to access the PMIx version of the topology tree (i.e., if the host chooses not to create the topology
+for itself and let PMIx do it instead) can obtain a pointer to the topology thru a call to PMIx_Load_topology.
