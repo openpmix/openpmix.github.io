@@ -97,8 +97,8 @@ For cases where shared memory topology support is not present (e.g., when using 
 
 **CRITICAL NOTE:** At the completion of any of these procedures, you can traverse/query the topology tree in "topo" using the usual HWLOC support functions. However, this requires that the version of HWLOC you are using MUST exactly match the HWLOC version used to construct the topology. To aid in determining compatibility, PMIx adds the HWLOC version triplet to the end of the `pmix_topology_t` source field - e.g., "hwloc:2.2.0" - where the version is known. PMIx currently cannot determine the source HWLOC version, for instance, when given the topology tree from a file. We are working on that extension.
 
-The above methods, of course, require that the library or application build/link against a PMIx library. In some cases, particularly in lower-level libraries, adding a dependency on PMIx is something rather undesirable - developers of such libraries prefer to keep them "thin" with minimal dependencies and as small a memory footprint as possible. We are still working on a solution to this use-case. Meantime, we strongly
-encourage library developers to consider directly using PMIx to avoid topology tree duplication.
+The above methods, of course, require that the library or application build/link against a PMIx library. In some cases, particularly in lower-level libraries, adding a dependency on PMIx is something rather undesirable - developers of such libraries prefer to keep them "thin" with minimal dependencies and as small a memory footprint as possible. We are still working on different solutions to this use-case. Meantime, we strongly
+encourage library developers to either provide a "hook" by which someone can pass their package the `hwloc_topology_t` pointer or consider directly using PMIx to avoid topology tree duplication.
 
 
 
