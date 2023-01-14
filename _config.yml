@@ -45,6 +45,7 @@ plugins:
 header_pages:
   - downloads.md
   - privacy.md
+  - security.md
   - publications.md
   - community.md
   - contribute.md
