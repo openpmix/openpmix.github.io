@@ -76,3 +76,6 @@ PMIx Reference RunTime Environment
 ----------------------------------
  - [https://github.com/openpmix/prrte/releases](https://github.com/openpmix/prrte/releases)
 
+Test Area for Sharing Test Versions
+-----------------------------------
+- [csamuel](https://openpmix.github.io/uploads/2022/pmix-4.2.4-1.src.rpm)
