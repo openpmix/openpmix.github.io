@@ -77,7 +77,7 @@ So if you want to use PMIx backward compatibility, you need to:
     and PMIx libpmi\[2\] are installed, then you must ensure that the
     path to the PMIx libpmi\[2\] versions is first in your
     LD\_LIBRARY\_PATH to avoid loading the incorrect library; and
-2.  specify –mpi=pmix on the srun cmd line (regardless of whether or not
+2.  specify ––mpi=pmix on the srun cmd line (regardless of whether or not
     your application or its underlying library uses the PMI-1 or PMI-2
     APIs).
 
@@ -110,14 +110,14 @@ Starting with Slurm 17.11, it is possible to build against multiple PMIx
 versions. For example, building against both PMIx versions 1.2 and 2.1
 can be done by specifying *–with-pmix=path-to-1.2:path-to-2.1* on the
 Slurm configure line. When submitting a job, the desired version can
-then be selected using either the *–mpi=pmix\_v1* or *–mpi=pmix\_v2*
-command line options for “srun”. If the non-version-specific *–mpi=pmix*
+then be selected using either the *––mpi=pmix\_v1* or *––mpi=pmix\_v2*
+command line options for “srun”. If the non-version-specific *––mpi=pmix*
 is given, then the highest installed PMIx version will be used.
 
 **Executing Applications**  
 Executing an application using the Slurm PMIx plugin (whether via the
 native PMIx or the backward compatibility APIs) requires that one add
-*–mpi=pmix* (or a version-specific directive) to the srun command line.
+*––mpi=pmix* (or a version-specific directive) to the srun command line.
 Alternatively, a system administrator can designate the desired PMIx
 plugin as the default in the slurm.conf file.
 
