@@ -38,6 +38,12 @@ Papers
 Presentations
 -------------
 
+2021
+====
+ - Tutorial on PMIx/PRRTE code bases
+   - Part 1: \[[PPX](/uploads/2021/Tutorial-Part1.pptx)]
+   - Part 2: \[[PPX](/uploads/2021/Tutorial-Part2.pptx)]
+
 2019
 ====
  - SC19 BoF \[[PDF](/uploads/2019/12/PMIx-SC-BoF-2019.pdf)\]
