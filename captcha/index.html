@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hCaptcha Demo</title>
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+            margin: auto;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+        }
+        .message {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>hCaptcha Demo</h1>
+        <p>Please complete the CAPTCHA to proceed.</p>
+        <form id="captcha-form">
+            <div class="h-captcha" data-sitekey="e924a3fe-9d8e-482e-b2d8-2a5c308a8746"></div>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('captcha-form');
+        const messageDiv = document.getElementById('message');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            messageDiv.textContent = "Form submitted successfully! (This is just a demo.)";
+        });
+    </script>
+</body>
+</html>
+
