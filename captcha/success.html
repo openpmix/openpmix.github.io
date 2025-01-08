@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script>
+        // Get the URL parameters
+        const params = new URLSearchParams(window.location.search);
+        const token = params.get('auth');
+
+        if (token) {
+            // Token exists, display success message
+            document.getElementById('content').innerHTML = `
+                <h1>Success!</h1>
+                <p>You have successfully completed the CAPTCHA and accessed this page.</p>
+				<H1>Info for 2025</H1>
+				<p>This is where the info for 2025 meeting would go.</p>
+            `;
+        } else {
+            // Token is missing, redirect back to the main page
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
