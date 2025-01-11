@@ -44,7 +44,7 @@ One-time setup for the basic `/captcha` directory in repository.
 
  1. (One-time setup) Create hCaptcha free account and generate `sitekey`
     - Note: Currently using setup under naughtont AT ornl.gov account.
-    - Note: Using 'Always Challenge' and 'Easy' settings.
+    - Note: Using 'Always Challenge' and 'Easy' or 'Moderate' settings.
     - https://dashboard.hcaptcha.com/sites?page=1&archived=active
 
  2. Edit `index.html`, update `data-sitekey` with `sitekey` from Step 1.
@@ -84,4 +84,5 @@ Misc
    when posting content to the statically generated gh-pages
  - Encode script at `_misc/encode.py`
  - Example HTML formatted meeting data at `_misc/example.dat`
+ - hCaptcha: [https://dashboard.hcaptcha.com](https://dashboard.hcaptcha.com)
 
