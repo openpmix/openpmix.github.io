@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hCaptcha Demo</title>
+    <title>OpenPMIx Developer (2025) Zoom meeting info</title>
     <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
+            text-align: left;
             margin-top: 50px;
         }
         form {
@@ -27,8 +27,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>hCaptcha Demo</h1>
-        <p>Please complete the CAPTCHA to proceed.</p>
+        <h1>OpenPMIx Developer (2025) Zoom meeting info</h1>
+        <p>
+        11:00 AM - 12:00 PM (1 hour) US Eastern<br>
+        Every First Thursday @11:00 AM ET until 12/31/2025
+        </p>
+        <p>
+        Complete the CAPTCHA then submit the form to get the meeting links.
+        </p>
         <form id="captcha-form">
             <div class="h-captcha" data-sitekey="e924a3fe-9d8e-482e-b2d8-2a5c308a8746"></div>
             <br>
@@ -42,8 +48,21 @@
         const messageDiv = document.getElementById('message');
 
         form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            messageDiv.textContent = "Form submitted successfully! (This is just a demo.)";
+            e.preventDefault(); // Prevent traditional form submission
+
+            // Simulate CAPTCHA validation
+            const hCaptchaResponse = hcaptcha.getResponse();
+            if (hCaptchaResponse) {
+                // Generate a unique token
+                const token = btoa(Date.now() + Math.random().toString()).substring(0, 16);
+
+                // Redirect to success.html with token as a query parameter
+                window.location.href = `success.html?auth=${token}`;
+            } else {
+                // Display an error if CAPTCHA isn't completed
+                messageDiv.textContent = "Please complete the CAPTCHA before proceeding.";
+                messageDiv.style.color = "red";
+            }
         });
     </script>
 </body>
