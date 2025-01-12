@@ -51,7 +51,7 @@ Probably the first thing you should do is join the conversation.
    GitHub repository corresponding to the target of your question or comment.
 
  - Community members meet every Thursday at noon US Pacific for a
-   [telecon](https://recaptcha.open-mpi.org/pmix-recaptcha/) to discuss the
+   [telecon](https://openpmix.org/captcha/) to discuss the
    the implementation aspects of the PMIx Standard.
 
  - [Mailing list](https://groups.google.com/forum/#!forum/pmix). The list
