@@ -54,9 +54,11 @@ Probably the first thing you should do is join the conversation.
    [telecon](https://openpmix.org/captcha/) to discuss the
    the implementation aspects of the PMIx Standard.
 
- - [Mailing list](https://groups.google.com/forum/#!forum/pmix). The list
-   is not as heavily used as the other methods, but we do post announcements
-   there and many of us monitor it for questions and comments
+ - [Mailing list (OpenPMIx)](https://groups.google.com/g/pmix).  The
+   implementation list is not as heavily used as the other methods, but
+   we do post announcements there and many of us monitor it for questions
+   and comments.  There is also a [PMIx Forum](https://groups.google.com/forum/#!forum/pmix) mailing list that is primarily concerned with the
+   PMIx Standard.
 
 Contributions to Code
 ---------------------
